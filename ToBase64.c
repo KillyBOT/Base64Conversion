@@ -35,6 +35,7 @@ int main(int argc, char** argv){
 
 	while(keepRunning){
 		charactersRead = fread(currentRead, sizeof(char), READ_SIZE, toConvert);
+		if(charactersRead == 0) break;
 		for(int x = charactersRead; x < READ_SIZE; x++) currentRead[x] = 0;
 		//printBits(currentRead);
 
